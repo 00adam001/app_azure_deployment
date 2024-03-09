@@ -8,12 +8,12 @@ terraform {
 }
 
 resource "azurerm_resource_group" "arg" {
-  name     = "TerraformHW3"
+  name     = "TformHW3"
   location = "West Europe"
 }
 
 resource "azurerm_storage_account" "asa" {
-  name                     = "terraformhw3storage"
+  name                     = "tformhw3storage"
   resource_group_name      = "TerraformHW3"
   account_tier             = "Standard"
   location                 = "West Europe"
