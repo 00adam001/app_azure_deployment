@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "arg" {
   name     = "TerraformHW3"
   location = "West Europe"
