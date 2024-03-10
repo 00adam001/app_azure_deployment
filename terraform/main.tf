@@ -1,4 +1,3 @@
-# Terraform block specifying the backend configuration.
 terraform {
   backend "azurerm" {
     # Configuring Azure as the backend for storing Terraform state.
@@ -21,13 +20,11 @@ resource "azurerm_app_service_plan" "appserviceplan" {
   name                = "webapp-plan"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  os_type             = "Linux"
-  sku_name            = "B1"
 }
 
 # Create the web app, pass in the App Service Plan ID
 resource "azurerm_app_service" "webapp" {
-  name                  = "webapp-${random_integer.ri.result}"
+  name                  = "webapp-service"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   service_plan_id       = azurerm_service_plan.appserviceplan.id
