@@ -28,6 +28,7 @@ resource "azurerm_app_service" "AZAPP" {
   name                = "Azure-app-service"
   location            = "West Europe"
   resource_group_name = "TerrafoormHW3"
+  app_service_plan_id = azurerm_app_service_plan.AZAPP.id
 
   site_config {
     python_version = "3.8"
