@@ -20,6 +20,10 @@ resource "azurerm_app_service_plan" "appserviceplan" {
   name                = "webapp-plan"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
+    sku {
+    tier = "Basic"
+    size = "B1"
+  }
 }
 
 # Create the web app, pass in the App Service Plan ID
@@ -27,7 +31,7 @@ resource "azurerm_app_service" "webapp" {
   name                  = "webapp-service"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
-  service_plan_id       = azurerm_service_plan.appserviceplan.id
+  app_service_plan_i    = azurerm_service_plan.appserviceplan.id
   https_only            = true
   site_config {
     python_version = "3.8"
