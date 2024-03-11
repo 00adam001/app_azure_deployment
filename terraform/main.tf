@@ -10,7 +10,7 @@ terraform {
 
 # Create the resource group
 resource "azurerm_resource_group" "rg" {
-  name     = "TerraformHW3"  # Corrected resource group name
+  name     = "TformHW3"  # Corrected resource group name
   location = "West Europe"
 }
 
