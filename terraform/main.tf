@@ -27,7 +27,7 @@ resource "azurerm_app_service_plan" "appserviceplan" {
 
 # Create the web app, pass in the App Service Plan ID
 resource "azurerm_app_service" "webapp" {
-  name                  = "webapp-service"
+  name                  = "HW3-webapp-service"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   app_service_plan_id   = azurerm_app_service_plan.appserviceplan.id  # Corrected reference
