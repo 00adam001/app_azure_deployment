@@ -73,9 +73,9 @@ jobs:
 
     - name: Archive Application with Dependencies
       run: |
-        mkdir -p app
-        cp HW3my-app.py app/
-        zip -r function_package.zip app
+        mkdir -p function_package 
+        cp HW3my-app.py function_package/
+        zip -r function_package.zip function_package
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
