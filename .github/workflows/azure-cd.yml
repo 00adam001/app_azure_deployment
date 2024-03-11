@@ -50,7 +50,6 @@ jobs:
         
   build:
     env:
-      AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' 
       AZURE_WEBAPP_NAME: HW3my-app
       
     runs-on: ubuntu-latest
