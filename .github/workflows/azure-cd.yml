@@ -75,7 +75,6 @@ jobs:
       run: |
         mkdir -p app
         cp HW3my-app.py app/
-        cp -R $VIRTUAL_ENV/lib/python3.x/site-packages app/
         zip -r function_package.zip app
 
     - name: Upload Artifact
@@ -89,7 +88,11 @@ jobs:
       with:
         name: function_package
         path: function_package.zip
-
+        
+    - name: Azure login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
