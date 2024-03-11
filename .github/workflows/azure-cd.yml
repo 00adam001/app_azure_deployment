@@ -74,7 +74,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: HW3my-app.py
-        package: .
+        package: my/target/*.war
         slot-name: production
       env:
         AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
