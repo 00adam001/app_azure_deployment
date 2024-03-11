@@ -32,9 +32,6 @@ resource "azurerm_app_service" "webapp" {
   resource_group_name   = azurerm_resource_group.rg.name
   app_service_plan_id   = azurerm_app_service_plan.appserviceplan.id  # Corrected reference
   https_only            = true
-  site_config {
-    python_version = "3.8"
-  }
 
   app_settings = {
     "FLASK_APP" = "HW3my-app.py"
