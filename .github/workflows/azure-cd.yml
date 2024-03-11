@@ -75,19 +75,19 @@ jobs:
       run: |
         mkdir -p function_package 
         cp HW3my-app.py function_package/
-        zip -r function_package.zip function_package
+        zip -r function_package2.zip function_package
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: function_package
-        path: function_package.zip
+        name: function_package2
+        path: function_package2.zip
 
     - name: Download Artifact
       uses: actions/download-artifact@v2
       with:
-        name: function_package
-        path: function_package.zip
+        name: function_package2
+        path: function_package2.zip
         
     - name: Azure login
       uses: azure/login@v2
@@ -98,5 +98,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        package: function_package.zip
+        package: function_package2.zip
  
