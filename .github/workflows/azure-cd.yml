@@ -83,17 +83,6 @@ jobs:
         name: function_package2
         path: function_package2.zip
 
-    - name: Download Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: function_package2
-        path: function_package2.zip
-        
-    - name: Azure login
-      uses: azure/login@v2
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
