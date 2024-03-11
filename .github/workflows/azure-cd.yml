@@ -14,7 +14,7 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
       AZURE_WEBAPP_NAME: HW3my-app
-      AZURE_FUNCTIONAPP_PACKAGE_PATH: .
+      AZURE_FUNCTIONAPP_PACKAGE_PATH: https://github.com/00adam001/assignment_3/archive/refs/heads/main.zip
       
     runs-on: ubuntu-latest
     environment: dev
