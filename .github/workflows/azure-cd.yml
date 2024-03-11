@@ -83,6 +83,12 @@ jobs:
         name: function_package2
         path: function_package2.zip
 
+    - name: Download Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: function_package
+        path: function_package2.zip
+
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
